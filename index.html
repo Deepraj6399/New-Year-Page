@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>New Year Voucher 2026</title>
+
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(120deg, #3057f2, #ede2f8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+        100% { transform: translateY(0); }
+    }
+
+    .card {
+        padding: 40px;
+        border-radius: 24px;
+        width: 540px;
+        text-align: center;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+        animation: float 4s ease-in-out infinite;
+        position: relative;
+        backdrop-filter: blur(6px);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /* overlay for readability */
+    .overlay {
+        border-radius: 24px;
+        padding: 40px;
+    }
+
+    .logo {
+        width: 160px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        color: #4f46e5;
+        margin-bottom: 15px;
+        font-size: 30px;
+    }
+
+    p {
+        line-height: 1.7;
+        color: #374151;
+        font-size: 15.5px;
+    }
+
+    .name {
+        margin-top: 14px;
+        font-size: 18px;
+        color: #111827;
+        font-weight: 600;
+    }
+
+    .voucher-link {
+        display: inline-block;
+        margin-top: 28px;
+        padding: 15px 36px;
+        background: linear-gradient(90deg, #ff7a18, #ffb347);
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 12px 30px rgba(255, 122, 24, 0.5);
+    }
+
+    .voucher-link:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 18px 40px rgba(255, 122, 24, 0.7);
+    }
+
+    .voucher-code {
+        margin-top: 28px;
+        font-size: 24px;
+        color: #16a34a;
+        display: none;
+        background: #ecfdf5;
+        padding: 16px;
+        border-radius: 14px;
+        border: 2px dashed #22c55e;
+    }
+
+    .cracker {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: radial-gradient(circle, #ffd700, #ff8c00);
+        border-radius: 50%;
+        animation: blast 1.1s ease-out forwards;
+        pointer-events: none;
+    }
+
+    @keyframes blast {
+        0% {
+            transform: translate(0, 0) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translate(var(--x), var(--y)) scale(0);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- ✅ Background image applied directly here -->
+<div class="card" style="background-image: url('newbackground.jpg');">
+
+    <div class="overlay">
+
+        <img src="logo.png" alt="Company Logo" class="logo">
+
+        <h1>🎆 Happy New Year 2026 🎆</h1>
+
+        <p>
+            As we step into 2026, we want to take a moment to reflect on everything we achieved together over the past year.
+            Your dedication and hard work have been the driving force behind our success.
+        </p>
+
+        <div class="name">🎉 For: Aman Singh</div>
+
+        <a class="voucher-link" onclick="openVoucher()">
+            🎁 Reveal Your New Year Voucher
+        </a>
+
+        <div class="voucher-code" id="voucherCode">
+            🎊 Your Voucher Code: <strong>12345577</strong>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function openVoucher() {
+        document.getElementById("voucherCode").style.display = "block";
+
+        for (let i = 0; i < 70; i++) {
+            let cracker = document.createElement("div");
+            cracker.className = "cracker";
+
+            cracker.style.left = Math.random() * window.innerWidth + "px";
+            cracker.style.top = Math.random() * window.innerHeight + "px";
+
+            cracker.style.setProperty("--x", (Math.random() * 600 - 300) + "px");
+            cracker.style.setProperty("--y", (Math.random() * 600 - 300) + "px");
+
+            document.body.appendChild(cracker);
+
+            setTimeout(() => cracker.remove(), 1100);
+        }
+    }
+</script>
+
+</body>
+</html>
